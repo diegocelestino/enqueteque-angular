@@ -42,7 +42,56 @@ body {
   justify-content: space-between;
 }
 
+.action-panel {
+  /*THIS VARIABLE CHANGE THE SIDE OF ACTION PANEL*/
+  justify-content: end;
+  /*THIS VARIABLE SENDS PANEL TO BACK*/
+  z-index: 2;
+  width: 80%;
+  align-self: center;
+  display: flex;
+  position: absolute;
+}
+
+.action-panel-items {
+  width: 48%;
+}
+
+.action-panel-vote-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 56px;
+  background-color: #029B99;
+  border-radius: 16px;
+  font-weight: 1000;
+  color: #EBE7B7;
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.action-panel-share-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 56px;
+  background-color: #029B99;
+  border-radius: 16px;
+  font-weight: 1000;
+  color: #EBE7B7;
+  font-size: 24px;
+}
+
+.share-image {
+  margin-left: 4px;
+  width: 28px;
+  height: 24px;
+}
+
 .desktop-left-choice {
+  /*opacity: 0;*/
   width: 48%;
   height: 486px;
   display: flex;
@@ -54,6 +103,7 @@ body {
 }
 
 .desktop-right-choice {
+  /*opacity: 0;*/
   width: 48%;
   height: 486px;
   display: flex;
@@ -62,6 +112,7 @@ body {
   position: relative;
   z-index: 1;
   justify-self: flex-end;
+  align-self: flex-start;
 }
 
 .desktop-left-image {
@@ -78,7 +129,7 @@ body {
   border-radius: 16px;
 }
 
-.desktop-left-poll-buttom {
+.desktop-left-poll-button {
   margin-bottom: 48px;
   position: absolute;
   z-index:2;
@@ -91,7 +142,7 @@ body {
   border-radius: 16px;
 }
 
-.desktop-right-poll-buttom {
+.desktop-right-poll-button {
   margin-bottom: 48px;
   position: absolute;
   z-index:2;
@@ -180,7 +231,7 @@ body {
     margin-bottom: 82px;
     position: absolute;
     z-index:2;
-    display: flex;
+    display: grid;
     justify-content: center;
     width: 168px;
   }
@@ -199,7 +250,7 @@ body {
   .left-choice .level {
     z-index:3;
     position: absolute;
-    width: 48px;
+    width: 168px;
     height: 64px;
     background-color: #029B99;
     border-radius: 16px 0px 0px 16px;
@@ -209,11 +260,26 @@ body {
     z-index:4;
     position: absolute;
     align-self: center;
+    justify-self: center;
     font-weight: 500;
     color: #f6e7d3;
     font-size: 24px;
     text-align: center;
   }
+
+  .left-choice .choice-votes {
+    z-index:4;
+    margin-right: 12px;
+    position: absolute;
+    align-self: center;
+    justify-self: flex-end;
+    font-weight: 500;
+    color: #f6e7d3;
+    font-size: 12px;
+    text-align: center;
+  }
+
+
 
   .right-choice {
     width: 180px;
@@ -231,7 +297,7 @@ body {
     margin-bottom: 82px;
     position: absolute;
     z-index:2;
-    display: flex;
+    display: grid;
     justify-content: center;
     width: 168px;
   }
@@ -260,9 +326,22 @@ body {
     z-index:4;
     position: absolute;
     align-self: center;
+    justify-self: center;
     font-weight: 500;
     color: #f6e7d3;
     font-size: 24px;
+    text-align: center;
+  }
+
+  .right-choice .choice-votes {
+    z-index: 4;
+    margin-left: 12px;
+    position: absolute;
+    align-self: center;
+    justify-self: flex-start;
+    font-weight: 500;
+    color: #f6e7d3;
+    font-size: 12px;
     text-align: center;
   }
 
