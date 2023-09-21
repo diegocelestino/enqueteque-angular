@@ -46,7 +46,7 @@ body {
   /*THIS VARIABLE CHANGE THE SIDE OF ACTION PANEL*/
   justify-content: end;
   /*THIS VARIABLE SENDS PANEL TO BACK*/
-  z-index: 2;
+  z-index: 1;
   width: 80%;
   align-self: center;
   display: flex;
@@ -57,31 +57,18 @@ body {
   width: 48%;
 }
 
-.action-panel-vote-button {
+.action-panel-button {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 56px;
-  background-color: #029B99;
+  background-color: #ECC039;
   border-radius: 16px;
   font-weight: 1000;
-  color: #EBE7B7;
+  color: #001F21;
   font-size: 24px;
   margin-bottom: 12px;
-}
-
-.action-panel-share-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 56px;
-  background-color: #029B99;
-  border-radius: 16px;
-  font-weight: 1000;
-  color: #EBE7B7;
-  font-size: 24px;
 }
 
 .share-image {
@@ -90,8 +77,156 @@ body {
   height: 24px;
 }
 
+.choices-titles {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.status-choice-title{
+  font-weight: 1000;
+  color: #001F21;
+  font-size: 24px;
+}
+
+.action-panel-poll-status {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.left-side {
+  width: 50%;
+  height: 80px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 1;
+  justify-self: flex-start;
+  position: relative;
+}
+
+
+.left-side .poll-status {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index:2;
+  display: grid;
+}
+
+.left-side .base {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #66797a;
+  border-radius: 16px 0px 0px 16px;
+}
+
+.left-side .level {
+  z-index:3;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #029B99;
+  border-radius: 16px 0px 0px 16px;
+}
+
+.left-side .choice-percentage {
+  z-index:4;
+  margin-left: 10%;
+  position: absolute;
+  align-self: center;
+  justify-self: center;
+  font-weight: 500;
+  color: #f6e7d3;
+  font-size: 24px;
+  text-align: center;
+}
+
+.left-side .choice-votes {
+  z-index: 4;
+  margin-right: 12px;
+  position: absolute;
+  align-self: center;
+  justify-self: flex-end;
+  font-weight: 500;
+  color: #f6e7d3;
+  font-size: 12px;
+  text-align: center;
+}
+
+.right-side {
+  width: 50%;
+  height: 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 1;
+  justify-self: flex-end;
+  position: relative;
+}
+
+.right-side .poll-status {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index:2;
+  display: grid;
+}
+
+.right-side .base {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #66797a;
+  border-radius: 0px 16px 16px 0px;
+}
+
+.right-side .level {
+  z-index:3;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #de4f15;
+  border-radius: 0px 16px 16px 0px;
+}
+
+.right-side .choice-percentage {
+  z-index:4;
+  margin-right: 10%;
+  position: absolute;
+  align-self: center;
+  justify-self: center;
+  font-weight: 500;
+  color: #f6e7d3;
+  font-size: 24px;
+  text-align: center;
+}
+
+.right-side .choice-votes {
+  z-index: 4;
+  margin-left: 12px;
+  position: absolute;
+  align-self: center;
+  justify-self: flex-start;
+  font-weight: 500;
+  color: #f6e7d3;
+  font-size: 12px;
+  text-align: center;
+}
+
 .desktop-left-choice {
-  /*opacity: 0;*/
+  /*THIS VARIABLE CONTROLS IF THE LEFT CHOICE APPEARS OR DISAPPEARS */
+  opacity: 0;
   width: 48%;
   height: 486px;
   display: flex;
@@ -103,7 +238,8 @@ body {
 }
 
 .desktop-right-choice {
-  /*opacity: 0;*/
+  /*THIS VARIABLE CONTROLS IF THE RIGHT CHOICE APPEARS OR DISAPPEARS */
+  opacity: 0;
   width: 48%;
   height: 486px;
   display: flex;
@@ -164,6 +300,8 @@ body {
   font-size: 24px;
   text-align: center;
 }
+
+
 
 
 
@@ -394,6 +532,5 @@ body {
     width: 28px;
     height: 24px;
   }
-
 }
 

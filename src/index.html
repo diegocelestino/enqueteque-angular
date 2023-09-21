@@ -12,6 +12,7 @@
 
 <div class="content">
 
+  <!--  THE COMPONENT FOR THE TITLE BAR-->
   <div class="desktop-center-holder">
     <div class="title-bar">
       <p class="title">qual é melhor?</p>
@@ -22,10 +23,14 @@
 
   <div class="mobile-poll">
 
+    <!--    THIS COMPONENT HOLD THE IMAGES TOGHETER-->
+
     <div class="images">
       <img class="right-image" src="assets/gema_mole.jpg"/>
       <img class="left-image" src="assets/gema_dura.jpg"/>
     </div>
+
+    <!--    THE COMPONENT FOR THE LEFT CHOICE CONTROLS-->
 
     <div class="left-choice">
       <div class="poll-status">
@@ -37,6 +42,8 @@
       </div>
     </div>
 
+    <!--    THE COMPONENT FOR THE RIGHT CHOICE CONTROLS-->
+
     <div class="right-choice">
       <div class="poll-status">
         <p class="choice-title">35%</p>
@@ -46,6 +53,9 @@
         </div>
       </div>
     </div>
+
+
+    <!-- BUTTONS FOR VOTE AGAIN AND SHARE-->
 
     <div class="action-buttons">
       <div class="vote-again">
@@ -66,19 +76,46 @@
     <div class="desktop-poll">
 
       <div class="action-panel">
-
         <div class="action-panel-items">
-          <div>
 
+          <!--THIS COMPONENT SHOWS THE NAMES OF THE CHOICES-->
+          <div class="choices-titles">
+            <p class="status-choice-title">gema dura</p>
+            <p class="status-choice-title">gema mole</p>
           </div>
-          <div class="action-panel-vote-button"> votar de novo</div>
-          <div class="action-panel-share-button"> compartilhar
+
+          <!-- THIS COMPONENT SHOWS THE STATUS OF VOTING-->
+          <div class="action-panel-poll-status">
+            <div class="left-side">
+              <div class="poll-status">
+                <p class="choice-percentage">65%</p>
+                <p class="choice-votes">10.888</p>
+                <div class="base">
+                  <div class="level"></div>
+                </div>
+              </div>
+            </div>
+            <div class="right-side">
+              <div class="poll-status">
+                <p class="choice-percentage">35%</p>
+                <p class="choice-votes">10.888</p>
+                <div class="base">
+                  <div class="level"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- THIS BUTTONS ARE FOR VOTING AGAIN AND SHARE         -->
+          <div class="action-panel-button"> votar de novo</div>
+          <div class="action-panel-button"> compartilhar
             <img class="share-image" src="assets/share.png">
           </div>
         </div>
 
       </div>
 
+      <!--THIS IS THE LEFT CHOICE CONTROLS      -->
       <div class="desktop-left-choice">
         <img class="desktop-left-image" src="assets/gema_dura.jpg"/>
         <div class="desktop-left-poll-button">
@@ -86,13 +123,14 @@
         </div>
       </div>
 
+      <!--THIS IS THE RIGHT CHOICE CONTROLS      -->
+
       <div class="desktop-right-choice">
         <img class="desktop-right-image" src="assets/gema_mole.jpg"/>
         <div class="desktop-right-poll-button">
           <div class="choice-title">gema dura</div>
         </div>
       </div>
-
 
     </div>
   </div>
