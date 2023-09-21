@@ -6,10 +6,19 @@ body {
   margin: 0;
 }
 
-/*PRECISO CRIAR COMPONENTES SEPARADOS PARA O DESKTOP*/
+.mobile-poll {
+  display: none;
+}
+
 .content {
   background: #EBE7B7;
   padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.desktop-center-holder {
+  display: flex;
+  justify-content: center;
 }
 
 .title-bar {
@@ -26,25 +35,99 @@ body {
   font-size: 36px;
 }
 
-.poll {
+.desktop-poll {
+  width: 80%;
+  margin-top: 48px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.desktop-left-choice {
+  width: 48%;
+  height: 486px;
   display: flex;
   justify-content: center;
-  width: 80%;
-  margin-top: 40px;
+  align-items: flex-end;
+  z-index: 1;
+  justify-self: flex-start;
+  position: relative;
+}
+
+.desktop-right-choice {
+  width: 48%;
+  height: 486px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  z-index: 1;
+  justify-self: flex-end;
+}
+
+.desktop-left-image {
+  width: 100%;
+  height: 486px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.desktop-right-image {
+  width: 100%;
+  height: 486px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.desktop-left-poll-buttom {
+  margin-bottom: 48px;
+  position: absolute;
+  z-index:2;
+  display: flex;
+  justify-content: center;
+
+  width: 72%;
+  height: 64px;
+  background-color: #029B99;
+  border-radius: 16px;
+}
+
+.desktop-right-poll-buttom {
+  margin-bottom: 48px;
+  position: absolute;
+  z-index:2;
+  display: flex;
+  justify-content: center;
+
+  width: 72%;
+  height: 64px;
+  background-color: #DE4F15;
+  border-radius: 16px;
+}
+
+.choice-title {
+  z-index:4;
+  position: absolute;
+  align-self: center;
+  font-weight: 1000;
+  color: #f6e7d3;
+  font-size: 24px;
+  text-align: center;
 }
 
 
 
 /***************************************************************************************/
 
-@media only screen and (min-width: 600px) {
-  .desktop-center-holder {
-    display: flex;
-    justify-content: center;
-  }
-}
 
 @media only screen and (max-width: 600px) {
+
+  .desktop-poll {
+    display: none;
+  }
+
+  .desktop-center-holder {
+    display: block;
+  }
 
   .title-bar {
     display: flex;
@@ -55,9 +138,11 @@ body {
     background-color: #001f21;
   }
 
-  .poll {
+  .mobile-poll {
     width: 100%;
     margin-top: 0;
+    display: flex;
+    justify-content: center;
   }
 
   .images {
