@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
-
 body {
-  font-family: 'Nunito' ;
+  font-family: 'Nunito', sans-serif ;
   width: 100%;
   margin: 0;
 }
 
+.content {
+  background: #EBE7B7;
+  padding-top: 48px;
+}
+
 @media only screen and (max-width: 600px) {
-  .content {
-    background: #EBE7B7;
-    padding-top: 48px;
-  }
 
   .title-bar {
     display: flex;
@@ -35,9 +35,10 @@ body {
 
   .images {
     z-index: 0;
-    width: 100%;
+    width: 360px;
     display: flex;
     position: absolute;
+    justify-self: center;
   }
 
   .left-image {
