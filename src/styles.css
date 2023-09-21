@@ -177,7 +177,7 @@ body {
   }
 
   .left-choice .poll-status {
-    margin-bottom: 48px;
+    margin-bottom: 82px;
     position: absolute;
     z-index:2;
     display: flex;
@@ -228,7 +228,7 @@ body {
   }
 
   .right-choice .poll-status {
-    margin-bottom: 48px;
+    margin-bottom: 82px;
     position: absolute;
     z-index:2;
     display: flex;
@@ -264,6 +264,56 @@ body {
     color: #f6e7d3;
     font-size: 24px;
     text-align: center;
+  }
+
+  .action-buttons {
+    z-index: 2;
+    width: 360px;
+    height: 42px;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    justify-self: center;
+    align-self: flex-end;
+    margin-bottom: 20px;
+    gap: 24px;
+  }
+
+  .vote-again {
+    position: relative;
+    z-index:2;
+    display: flex;
+    justify-content: center;
+
+    width: 232px;
+    height: 42px;
+    background-color: #ECC039;
+    border-radius: 16px;
+  }
+
+  .vote-again-title {
+    color: #001F21;
+    font-size: 24px;
+    align-self: center;
+    font-weight: 1000;
+  }
+
+  .share-button {
+    position: relative;
+    z-index:2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 52px;
+    height: 42px;
+    background-color: #ECC039;
+    border-radius: 16px;
+  }
+
+  .share-image {
+    width: 28px;
+    height: 24px;
   }
 
 }
