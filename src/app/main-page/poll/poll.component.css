@@ -18,7 +18,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  width: 688px;
   height: 58px;
   background-color: #001f21;
 }
@@ -29,18 +29,18 @@
 }
 
 .desktop-poll {
-  width: 80%;
+  width: 100%;
   margin-top: 48px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .action-panel {
   /*THIS VARIABLE CHANGE THE SIDE OF ACTION PANEL*/
-  justify-content: flex-end;
+  justify-content: flex-start;
   /*THIS VARIABLE SENDS PANEL TO BACK*/
   z-index: -1;
-  width: 80%;
+  width: 688px;
   align-self: center;
   display: flex;
   position: absolute;
@@ -219,22 +219,24 @@
 
 .desktop-left-choice {
   /*THIS VARIABLE CONTROLS IF THE LEFT CHOICE APPEARS OR DISAPPEARS */
-  /*opacity: 0;*/
-  width: 48%;
-  height: 486px;
+  opacity: 1;
+  width: 328px;
+  height: 328px;
+  margin-right: 16px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   z-index: 1;
-  justify-self: flex-start;
+  justify-self: flex-end;
   position: relative;
 }
 
 .desktop-right-choice {
   /*THIS VARIABLE CONTROLS IF THE RIGHT CHOICE APPEARS OR DISAPPEARS */
-  /*opacity: 0;*/
-  width: 48%;
-  height: 486px;
+  opacity: 1;
+  margin-left: 16px;
+  width: 328px;
+  height: 328px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -246,14 +248,14 @@
 
 .desktop-left-image {
   width: 100%;
-  height: 486px;
+  height: 328px;
   object-fit: cover;
   border-radius: 16px;
 }
 
 .desktop-right-image {
   width: 100%;
-  height: 486px;
+  height: 328px;
   object-fit: cover;
   border-radius: 16px;
 }
