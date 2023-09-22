@@ -266,7 +266,8 @@
   z-index:2;
   display: flex;
   justify-content: center;
-
+  box-shadow: 0px 4px 4px -2px #001F21;
+  border: none;
   width: 72%;
   height: 64px;
   background-color: #029B99;
@@ -279,11 +280,23 @@
   z-index:2;
   display: flex;
   justify-content: center;
-
+  box-shadow: 0px 4px 4px -2px #001F21;
+  border: none;
   width: 72%;
   height: 64px;
   background-color: #DE4F15;
   border-radius: 16px;
+}
+
+.desktop-right-poll-button:active,
+.desktop-left-poll-button:active {
+  transform: scale(0.9);
+}
+
+.desktop-right-poll-button:hover,
+.desktop-left-poll-button:hover {
+  box-shadow: 1px 4px 4px -2px #001F21;
+  text-shadow: 1px 1px 1px #66797a;
 }
 
 .choice-title {
@@ -331,23 +344,18 @@
 
   .images {
     z-index: 0;
-    width: 360px;
+    width: 100%;
     display: flex;
     position: absolute;
     justify-self: center;
   }
 
-  .left-image {
-    width: 180px;
+  .images .image {
+    width: 50%;
     height: 486px;
     object-fit: cover;
   }
 
-  .right-image {
-    width: 180px;
-    height: 486px;
-    object-fit: cover;
-  }
 
   .left-choice {
     width: 180px;
