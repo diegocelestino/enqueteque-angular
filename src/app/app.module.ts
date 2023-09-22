@@ -8,6 +8,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { PollComponent } from './main-page/poll/poll.component';
 import { OthersComponent } from './main-page/others/others.component';
 import { ListComponent } from './list/list.component';
+import { CategoriesComponent } from './categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ListComponent } from './list/list.component';
     MainPageComponent,
     PollComponent,
     OthersComponent,
-    ListComponent
+    ListComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,
