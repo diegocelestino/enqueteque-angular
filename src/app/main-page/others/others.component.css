@@ -150,14 +150,6 @@
   transform: scale(0.9);
 }
 
-.button:hover,
-.polls-row .item:hover,
-.emphasized-poll .items:hover
-{
-  box-shadow: 1px 1px 4px -0px #2BD1D7;
-  text-shadow: 1px 1px 1px #66797a;
-}
-
 @media only screen and (max-width: 727px) {
   .polls-list {
     display: block;

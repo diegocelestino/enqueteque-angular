@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { PollComponent } from './main-page/poll/poll.component';
 import { OthersComponent } from './main-page/others/others.component';
+import { ListComponent } from './list/list.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { OthersComponent } from './main-page/others/others.component';
     HeaderComponent,
     MainPageComponent,
     PollComponent,
-    OthersComponent
+    OthersComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,

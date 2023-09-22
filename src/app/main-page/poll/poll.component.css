@@ -62,6 +62,11 @@
   color: #001F21;
   font-size: 24px;
   margin-bottom: 12px;
+  box-shadow: 0px 4px 4px -2px #001F21;
+}
+
+.action-panel-button:active {
+  transform: scale(0.9);
 }
 
 .share-image {
@@ -535,5 +540,11 @@
     width: 28px;
     height: 24px;
   }
+
+  .vote-again:active,
+  .share-button:active {
+    transform: scale(0.9);
+  }
+
 }
 
