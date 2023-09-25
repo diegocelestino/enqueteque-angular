@@ -10,6 +10,7 @@ import { OthersComponent } from './main-page/others/others.component';
 import { ListComponent } from './list/list.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { SuggestionComponent } from './suggestion/suggestion.component';
+import { CreateComponent } from './create/create.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SuggestionComponent } from './suggestion/suggestion.component';
     OthersComponent,
     ListComponent,
     CategoriesComponent,
-    SuggestionComponent
+    SuggestionComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
