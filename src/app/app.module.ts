@@ -11,6 +11,7 @@ import { ListComponent } from './list/list.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { SuggestionComponent } from './suggestion/suggestion.component';
 import { CreateComponent } from './create/create.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CreateComponent } from './create/create.component';
     ListComponent,
     CategoriesComponent,
     SuggestionComponent,
-    CreateComponent
+    CreateComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
