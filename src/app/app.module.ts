@@ -9,7 +9,6 @@ import { PollComponent } from './main-page/poll/poll.component';
 import { OthersComponent } from './main-page/others/others.component';
 import { ListComponent } from './list/list.component';
 import { CategoriesComponent } from './categories/categories.component';
-import { SugestionComponent } from './sugestion/sugestion.component';
 import { SuggestionComponent } from './suggestion/suggestion.component';
 
 @NgModule({
@@ -21,7 +20,6 @@ import { SuggestionComponent } from './suggestion/suggestion.component';
     OthersComponent,
     ListComponent,
     CategoriesComponent,
-    SugestionComponent,
     SuggestionComponent
   ],
   imports: [
