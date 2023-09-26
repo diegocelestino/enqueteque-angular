@@ -6,6 +6,9 @@ import { CategoriesComponent } from './categories/categories.component';
 import { MainComponent } from './main/main.component';
 import { PollComponent } from './main/poll/poll.component';
 import { OthersComponent } from './main/others/others.component';
+import {ListComponent} from "./list/list.component";
+import {CreateComponent} from "./create/create.component";
+import {SuggestionComponent} from "./suggestion/suggestion.component";
 
 
 @NgModule({
@@ -13,7 +16,10 @@ import { OthersComponent } from './main/others/others.component';
     CategoriesComponent,
     MainComponent,
     PollComponent,
-    OthersComponent
+    OthersComponent,
+    ListComponent,
+    CreateComponent,
+    SuggestionComponent
   ],
   imports: [
     CommonModule,
