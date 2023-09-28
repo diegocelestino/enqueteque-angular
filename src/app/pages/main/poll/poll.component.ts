@@ -75,7 +75,7 @@ export class PollComponent implements OnInit {
   }
 
   voteAgain() {
-    this.hideActionPanel();
+    this.hideElement("action-panel");
     this.showButtons();
     this.resetVotes();
     this.showElement("desktop-left-choice");
@@ -103,14 +103,7 @@ export class PollComponent implements OnInit {
   private showActionPanel(orientation: string){
     let actionPanel = document.getElementById("action-panel");
     actionPanel!.style.justifyContent = orientation;
-    actionPanel!.style.opacity = "1";
-    actionPanel!.style.zIndex = "1";
-  }
-
-  private hideActionPanel(){
-    let actionPanel = document.getElementById("action-panel");
-    actionPanel!.style.opacity = "0";
-    actionPanel!.style.zIndex = "-1";
+    this.showElement("action-panel");
   }
 
   private hideElement(id: string) {
