@@ -136,6 +136,7 @@
 }
 
 .left-side .choice-percentage {
+  opacity: 1;
   z-index:4;
   margin-left: 10%;
   position: absolute;
@@ -148,6 +149,7 @@
 }
 
 .left-side .choice-votes {
+  opacity: 1;
   z-index: 4;
   margin-right: 12px;
   position: absolute;
@@ -403,6 +405,19 @@
   }
 
   .left-choice .choice-title {
+    opacity: 0;
+    z-index:4;
+    position: absolute;
+    align-self: center;
+    justify-self: center;
+    font-weight: 500;
+    color: #f6e7d3;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .left-choice .choice-percentage {
+    opacity: 1;
     z-index:4;
     position: absolute;
     align-self: center;
@@ -414,6 +429,7 @@
   }
 
   .left-choice .choice-votes {
+    opacity: 1;
     z-index:4;
     margin-right: 12px;
     position: absolute;
@@ -469,6 +485,19 @@
   }
 
   .right-choice .choice-title {
+    opacity: 0;
+    z-index:4;
+    position: absolute;
+    align-self: center;
+    justify-self: center;
+    font-weight: 500;
+    color: #f6e7d3;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .right-choice .choice-percentage {
+    opacity: 1;
     z-index:4;
     position: absolute;
     align-self: center;
@@ -480,6 +509,7 @@
   }
 
   .right-choice .choice-votes {
+    opacity: 1;
     z-index: 4;
     margin-left: 12px;
     position: absolute;

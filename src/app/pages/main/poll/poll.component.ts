@@ -12,7 +12,11 @@ import {first} from "rxjs";
 })
 export class PollComponent implements OnInit {
   pollFullDto: PollFullDto | undefined;
-  pollId: string | undefined;
+  pollId: string;
+  leftPercentage: number | undefined;
+  rightPercentage: number | undefined;
+  leftImage: string | undefined;
+  rightImage: string | undefined;
 
   constructor(
     private pollService: PollService,
@@ -23,17 +27,32 @@ export class PollComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getPoll(this.pollId);
+    this.loadPoll(this.pollId);
   }
 
-  private getPoll(pollId: string | undefined) {
+  private loadPoll(pollId: string) {
     this.pollService.getLatestPoll(pollId)
       .pipe(first())
       .subscribe({
         next: pollFullDto => {
           this.pollFullDto = pollFullDto;
-          console.log(this.pollFullDto);
+          this.getPercentages(pollFullDto);
+          this.getImages(pollFullDto);
         }
       })
+  }
+
+  private getPercentages(pollFullDto: PollFullDto): void{
+    let leftVotes = Number(pollFullDto!.choices!.at(0)!.votes);
+    let rightVotes = Number(pollFullDto!.choices!.at(1)!.votes);
+    let totalVotes = leftVotes + rightVotes;
+    this.leftPercentage = 100 * leftVotes / totalVotes;
+    this.rightPercentage = 100 * rightVotes / totalVotes;
+  }
+
+
+  private getImages(pollFullDto: PollFullDto) {
+    this.leftImage = 'data:image/png;base64,' + pollFullDto?.choices?.at(0)!.image;
+    this.rightImage = 'data:image/png;base64,' + pollFullDto?.choices?.at(1)!.image;
   }
 }

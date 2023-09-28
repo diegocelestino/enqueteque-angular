@@ -17,7 +17,6 @@ export class PollService extends BaseService{
   }
 
   getLatestPoll(pollId: string | undefined): Observable<PollFullDto> {
-    console.log(this.apiUrl + this.latest);
     return this.httpClient.get<PollFullDto>(this.apiUrl + this.latest, this.httpOptions);
   }
 }

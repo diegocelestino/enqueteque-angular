@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 
 import { PagesRoutingModule } from './pages-routing.module';
 import { CategoriesComponent } from './categories/categories.component';
@@ -23,9 +23,10 @@ import { LoginComponent } from './login/login.component';
     SuggestionComponent,
     LoginComponent,
   ],
-  imports: [
-    CommonModule,
-    PagesRoutingModule
-  ]
+    imports: [
+        CommonModule,
+        PagesRoutingModule,
+        NgOptimizedImage
+    ]
 })
 export class PagesModule { }
