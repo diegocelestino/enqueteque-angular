@@ -65,7 +65,7 @@
   <div class="desktop-center-holder">
     <div class="desktop-poll">
 
-      <div class="action-panel">
+      <div class="action-panel" id="action-panel">
         <div class="action-panel-items">
 
           <!--THIS COMPONENT SHOWS THE NAMES OF THE CHOICES-->
@@ -81,7 +81,7 @@
                 <p class="choice-percentage">{{ this.leftPercentage?.toPrecision(2) }}%</p>
                 <p class="choice-votes"> {{ pollFullDto?.choices?.at(0)?.votes }} </p>
                 <div class="base">
-                  <div class="level"></div>
+                  <div class="level" id="left-level"></div>
                 </div>
               </div>
             </div>
@@ -90,14 +90,14 @@
                 <p class="choice-percentage">{{ this.rightPercentage?.toPrecision(2) }}%</p>
                 <p class="choice-votes"> {{ pollFullDto?.choices?.at(1)?.votes }} </p>
                 <div class="base">
-                  <div class="level"></div>
+                  <div class="level" id="right-level"></div>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- THIS BUTTONS ARE FOR VOTING AGAIN AND SHARE         -->
-          <div class="action-panel-button"> votar de novo</div>
+          <div class="action-panel-button" (click)="this.voteAgain()"> votar de novo</div>
           <div class="action-panel-button"> compartilhar
             <img class="share-image" src="assets/share.png">
           </div>
@@ -106,18 +106,18 @@
       </div>
 
       <!--THIS IS THE LEFT CHOICE CONTROLS      -->
-      <div class="desktop-left-choice">
+      <div class="desktop-left-choice" id="desktop-left-choice">
         <img class="desktop-left-image" src="{{ this.leftImage }} "/>
-        <button class="desktop-left-poll-button">
+        <button class="desktop-left-poll-button" id="desktop-left-poll-button" (click)="this.voteOnLeft()" >
           <div class="choice-title"> {{ pollFullDto?.choices?.at(0)?.title }} </div>
         </button>
       </div>
 
       <!--THIS IS THE RIGHT CHOICE CONTROLS      -->
 
-      <div class="desktop-right-choice">
+      <div class="desktop-right-choice" id="desktop-right-choice">
         <img class="desktop-right-image" src="{{ this.rightImage }} "/>
-        <button class="desktop-right-poll-button">
+        <button class="desktop-right-poll-button" id="desktop-right-poll-button" (click)="this.voteOnRight()">
           <div class="choice-title"> {{ pollFullDto?.choices?.at(1)?.title }} </div>
         </button>
       </div>

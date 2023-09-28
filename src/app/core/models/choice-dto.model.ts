@@ -3,14 +3,14 @@ export class ChoiceDto {
   title: string;
   image: string;
   pollId: string;
-  votes: bigint;
+  votes: number;
 
   constructor(
     id: string,
     title: string,
     image: string,
     pollId: string,
-    votes: bigint
+    votes: number
   ) {
     this.id = id;
     this.title = title;
