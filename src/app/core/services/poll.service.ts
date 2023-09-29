@@ -10,7 +10,7 @@ import {environment} from "../enviroment/enviroment";
 })
 export class PollService extends BaseService{
   apiUrl = `${environment.apiUrl}/poll`;
-  latest: string = "/latest"
+  latest: string = "/latest";
 
   constructor(private httpClient: HttpClient) {
     super();
@@ -19,4 +19,5 @@ export class PollService extends BaseService{
   getLatestPoll(pollId: string | undefined): Observable<PollFullDto> {
     return this.httpClient.get<PollFullDto>(this.apiUrl + this.latest, this.httpOptions);
   }
+
 }
