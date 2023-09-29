@@ -19,7 +19,7 @@
   justify-content: center;
   align-items: center;
   width: 688px;
-  height: 58px;
+  height: 48px;
   background-color: #001f21;
 }
 
@@ -348,7 +348,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 58px;
+    height: 48px;
     background-color: #001f21;
   }
 
@@ -367,12 +367,19 @@
     justify-self: center;
   }
 
-  .images .image {
+  .images .left-image {
     width: 50%;
     height: 486px;
     object-fit: cover;
+    transition-duration: 1s;
   }
 
+  .images .right-image {
+    width: 50%;
+    height: 486px;
+    object-fit: cover;
+    transition-duration: 1s;
+  }
 
   .left-choice {
     width: 180px;
@@ -406,15 +413,29 @@
   }
 
   .left-choice .level {
-    z-index:3;
+    z-index:1;
     position: absolute;
-    width: 168px;
+    width: 100%;
     height: 64px;
     background-color: #029B99;
     border-radius: 16px 0px 0px 16px;
+    transition-duration: 1s;
   }
 
   .left-choice .choice-title {
+    opacity: 1;
+    z-index:4;
+    position: absolute;
+    align-self: center;
+    justify-self: center;
+    font-weight: 500;
+    color: #f6e7d3;
+    font-size: 24px;
+    text-align: center;
+    transition-duration: 1s;
+  }
+
+  .left-choice .choice-percentage {
     opacity: 0;
     z-index:4;
     position: absolute;
@@ -424,22 +445,11 @@
     color: #f6e7d3;
     font-size: 24px;
     text-align: center;
-  }
-
-  .left-choice .choice-percentage {
-    opacity: 1;
-    z-index:4;
-    position: absolute;
-    align-self: center;
-    justify-self: center;
-    font-weight: 500;
-    color: #f6e7d3;
-    font-size: 24px;
-    text-align: center;
+    transition-duration: 1s;
   }
 
   .left-choice .choice-votes {
-    opacity: 1;
+    opacity: 0;
     z-index:4;
     margin-right: 12px;
     position: absolute;
@@ -449,6 +459,7 @@
     color: #f6e7d3;
     font-size: 12px;
     text-align: center;
+    transition-duration: 1s;
   }
 
 
@@ -486,15 +497,29 @@
   }
 
   .right-choice .level {
-    z-index:3;
+    z-index:1;
     position: absolute;
-    width: 168px;
+    width: 100%;
     height: 64px;
     background-color: #de4f15;
     border-radius: 0px 16px 16px 0px;
+    transition-duration: 1s;
   }
 
   .right-choice .choice-title {
+    opacity: 1;
+    z-index:4;
+    position: absolute;
+    align-self: center;
+    justify-self: center;
+    font-weight: 500;
+    color: #f6e7d3;
+    font-size: 24px;
+    text-align: center;
+    transition-duration: 1s;
+  }
+
+  .right-choice .choice-percentage {
     opacity: 0;
     z-index:4;
     position: absolute;
@@ -504,22 +529,11 @@
     color: #f6e7d3;
     font-size: 24px;
     text-align: center;
-  }
-
-  .right-choice .choice-percentage {
-    opacity: 1;
-    z-index:4;
-    position: absolute;
-    align-self: center;
-    justify-self: center;
-    font-weight: 500;
-    color: #f6e7d3;
-    font-size: 24px;
-    text-align: center;
+    transition-duration: 1s;
   }
 
   .right-choice .choice-votes {
-    opacity: 1;
+    opacity: 0;
     z-index: 4;
     margin-left: 12px;
     position: absolute;
@@ -529,10 +543,12 @@
     color: #f6e7d3;
     font-size: 12px;
     text-align: center;
+    transition-duration: 1s;
   }
 
   .action-buttons {
-    z-index: 2;
+    opacity: 0;
+    z-index: -1;
     width: 360px;
     height: 42px;
     display: flex;
@@ -542,6 +558,7 @@
     align-self: flex-end;
     margin-bottom: 20px;
     gap: 24px;
+    transition-duration: 1s;
   }
 
   .vote-again {

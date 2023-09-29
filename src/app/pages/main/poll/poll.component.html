@@ -14,19 +14,19 @@
     <!--    THIS COMPONENT HOLD THE IMAGES TOGHETER-->
 
     <div class="images">
-      <img class="image" src="{{ this.leftImage }} " alt=""/>
-      <img class="image" src="{{ this.rightImage }}" alt=""/>
+      <img class="left-image" id="mobile-left-image" src="{{ this.leftImage }} " alt=""/>
+      <img class="right-image" id="mobile-right-image" src="{{ this.rightImage }}" alt=""/>
     </div>
 
     <!--    THE COMPONENT FOR THE LEFT CHOICE CONTROLS-->
 
     <div class="left-choice">
-      <div class="poll-status">
-        <p class="choice-title"> {{ pollFullDto?.choices?.at(0)?.title }} </p>
-        <p class="choice-percentage">{{ this.leftPercentage?.toPrecision(2) }}% </p>
-        <p class="choice-votes"> {{ pollFullDto?.choices?.at(0)?.votes }} </p>
+      <div class="poll-status" id="mobile-left-choice"(click)="voteOnLeft()">
+        <p class="choice-title" id="left-mobile-title"> {{ pollFullDto?.choices?.at(0)?.title }} </p>
+        <p class="choice-percentage" id="left-mobile-percentage" >{{ this.leftPercentage?.toPrecision(2) }}% </p>
+        <p class="choice-votes" id="left-mobile-votes"> {{ pollFullDto?.choices?.at(0)?.votes }} </p>
         <div class="base">
-          <div class="level"></div>
+          <div class="level" id="mobile-left-level"></div>
         </div>
       </div>
     </div>
@@ -34,12 +34,12 @@
     <!--    THE COMPONENT FOR THE RIGHT CHOICE CONTROLS-->
 
     <div class="right-choice">
-      <div class="poll-status">
-        <p class="choice-title"> {{ pollFullDto?.choices?.at(1)?.title }} </p>
-        <p class="choice-percentage">{{ this.rightPercentage?.toPrecision(2) }}%</p>
-        <p class="choice-votes"> {{ pollFullDto?.choices?.at(1)?.votes }} </p>
+      <div class="poll-status" id="mobile-right-choice" (click)="voteOnRight()">
+        <p class="choice-title" id="right-mobile-title"> {{ pollFullDto?.choices?.at(1)?.title }} </p>
+        <p class="choice-percentage" id="right-mobile-percentage">{{ this.rightPercentage?.toPrecision(2) }}%</p>
+        <p class="choice-votes" id="right-mobile-votes"> {{ pollFullDto?.choices?.at(1)?.votes }} </p>
         <div class="base">
-          <div class="level"></div>
+          <div class="level" id="mobile-right-level"></div>
         </div>
       </div>
     </div>
@@ -47,8 +47,8 @@
 
     <!-- BUTTONS FOR VOTE AGAIN AND SHARE-->
 
-    <div class="action-buttons">
-      <div class="vote-again">
+    <div class="action-buttons" id="mobile-action-buttons">
+      <div class="vote-again" (click)="voteAgain()">
         <div class="vote-again-title">votar de novo</div>
       </div>
 
