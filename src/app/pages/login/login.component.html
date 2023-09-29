@@ -7,14 +7,14 @@
 
     <div class="items">
 
-      <p class="label">login</p>
-      <input class="input" type="text">
+      <p class="label">nome</p>
+      <input class="input" id="name" type="text">
 
       <p class="label">senha</p>
-      <input class="input" type="password">
+      <input class="input" id="password" type="password">
 
       <div class="action-button">
-        <button class="button">enviar</button>
+        <button class="button" (click)="postLogin()">enviar</button>
       </div>
     </div>
   </div>

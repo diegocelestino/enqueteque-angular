@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'categories', component: CategoriesComponent },
   { path: 'list', component: ListComponent },
   { path: 'login', component:LoginComponent},
-  { path: 'create', component: CreateComponent},
+  { path: 'create/:token', component: CreateComponent},
   { path: 'suggestion', component: SuggestionComponent}
 ];
 
