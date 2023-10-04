@@ -33,6 +33,8 @@ export class PollComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadPoll(this.pollId);
+    this.rightPercentage = 0;
+    this.leftPercentage = 0;
   }
 
   private loadPoll(pollId: string) {
@@ -51,8 +53,14 @@ export class PollComponent implements OnInit {
     let leftVotes = pollFullDto!.choices!.at(0)!.votes;
     let rightVotes = pollFullDto!.choices!.at(1)!.votes;
     let totalVotes = leftVotes + rightVotes;
-    this.leftPercentage = 100 * leftVotes / totalVotes;
-    this.rightPercentage = 100 * rightVotes / totalVotes;
+    if (leftVotes != 0){
+      this.leftPercentage = 100 * leftVotes / totalVotes;
+    }
+
+    if (rightVotes != 0){
+      this.rightPercentage = 100 * rightVotes / totalVotes;
+
+    }
   }
 
   private getImages(pollFullDto: PollFullDto) {
@@ -61,6 +69,11 @@ export class PollComponent implements OnInit {
   }
 
   voteOnLeft() {
+    this.pollFullDto!.choices!.at(0)!.votes += 1;
+    this.getPercentages(this.pollFullDto!);
+
+    console.log(this.leftPercentage + " " + this.rightPercentage);
+
     this.pollAnimation.hideButtons("desktop-left-poll-button", "desktop-right-poll-button");
     this.pollAnimation.hideElement("desktop-right-choice");
     this.pollAnimation.showActionPanel("flex-end");
@@ -68,12 +81,13 @@ export class PollComponent implements OnInit {
     this.pollAnimation.hideMobile();
     this.pollAnimation.disableVoting();
     this.pollAnimation.countVotes(this.leftPercentage!, this.rightPercentage!);
-    this.pollFullDto!.choices!.at(0)!.votes += 1;
-    this.getPercentages(this.pollFullDto!);
     this.postVote(this.pollFullDto!.choices!.at(0)!.id!);
   }
 
   voteOnRight() {
+    this.pollFullDto!.choices!.at(1)!.votes += 1;
+    this.getPercentages(this.pollFullDto!);
+
     this.pollAnimation.hideButtons("desktop-left-poll-button", "desktop-right-poll-button");
     this.pollAnimation.hideElement("desktop-left-choice");
     this.pollAnimation.showActionPanel("flex-start");
@@ -81,8 +95,6 @@ export class PollComponent implements OnInit {
     this.pollAnimation.hideMobile();
     this.pollAnimation.disableVoting();
     this.pollAnimation.countVotes(this.leftPercentage!, this.rightPercentage!);
-    this.pollFullDto!.choices!.at(1)!.votes += 1;
-    this.getPercentages(this.pollFullDto!);
     this.postVote(this.pollFullDto!.choices!.at(1)!.id!);
   }
 
