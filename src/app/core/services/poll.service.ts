@@ -16,8 +16,21 @@ export class PollService extends BaseService{
     super();
   }
 
-  getLatestPoll(pollId: string | undefined): Observable<PollFullDto> {
+  loadPoll(pollId: string): Observable<PollFullDto>{
+    if (pollId == null){
+      return this.getLatestPoll();
+    } else {
+      return this.getPollById(pollId);
+    }
+  }
+
+  getLatestPoll(): Observable<PollFullDto> {
     return this.httpClient.get<PollFullDto>(this.apiUrl + this.latest, this.httpOptions);
   }
+
+  getPollById(pollId: string | undefined): Observable<PollFullDto> {
+    return this.httpClient.get<PollFullDto>(this.apiUrl + "/" + pollId, this.httpOptions);
+  }
+
 
 }

@@ -27,7 +27,8 @@ export class PollComponent implements OnInit {
     private router: Router,
     private pollAnimation: PollAnimationService,
   ) {
-    this.pollId = '';
+
+    this.pollId = this.route.snapshot.paramMap.get('pollId')!;
   }
 
   ngOnInit(): void {
@@ -35,7 +36,7 @@ export class PollComponent implements OnInit {
   }
 
   private loadPoll(pollId: string) {
-    this.pollService.getLatestPoll(pollId)
+    this.pollService.loadPoll(pollId)
       .pipe(first())
       .subscribe({
         next: pollFullDto => {
