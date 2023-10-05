@@ -32,7 +32,6 @@ export class CreateComponent implements OnInit {
   }
 
   postPoll() {
-    // console.log(this.mountPoll());
     this.createService.postPoll(this.mountPoll(), this.token!)
       .pipe(first())
       .subscribe({

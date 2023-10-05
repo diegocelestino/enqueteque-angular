@@ -10,13 +10,13 @@
   <div class="polls-list">
 
     <!--    THE EMPHASIZED POLL #1-->
-    <div class="emphasized-poll">
+    <div class="emphasized-poll" (click)="openPoll(this.pollsDto!.at(0)!)">
       <div class="items">
         <div class="title-bar">
-          <p class="title">qual você prefere?</p>
+          <p class="title"> {{ this.pollsDto?.at(0)?.title }} </p>
         </div>
-        <img class="left-image" src="assets/digital_book.png">
-        <img class="right-image" src="assets/physical_book.png">
+        <img class="left-image" src="{{ this.base64 + this.pollsDto?.at(0)?.images?.at(0) }}" alt="">
+        <img class="right-image" src="{{ this.base64 + this.pollsDto?.at(0)?.images?.at(1) }}" alt="">
       </div>
     </div>
 
@@ -27,21 +27,21 @@
         <div class="items">
 
           <!--          POLL #2-->
-          <div class="item">
+          <div class="item" (click)="openPoll(this.pollsDto!.at(1)!)">
             <div class="title-bar">
-              <p class="title">qual você prefere?</p>
+              <p class="title"> {{ this.pollsDto?.at(1)?.title }} </p>
             </div>
-            <img class="left-image" src="assets/digital_book.png">
-            <img class="right-image" src="assets/physical_book.png">
+            <img class="left-image" src="{{ this.base64 + this.pollsDto?.at(1)?.images?.at(0) }}">
+            <img class="right-image" src="{{ this.base64 + this.pollsDto?.at(1)?.images?.at(1) }}">
           </div>
 
           <!--          POLL #3-->
-          <div class="item">
+          <div class="item" (click)="openPoll(this.pollsDto!.at(2)!)">
             <div class="title-bar">
-              <p class="title">qual você prefere?</p>
+              <p class="title"> {{ this.pollsDto?.at(2)?.title }} </p>
             </div>
-            <img class="left-image" src="assets/digital_book.png">
-            <img class="right-image" src="assets/physical_book.png">
+            <img class="left-image" src="{{ this.base64 + this.pollsDto?.at(2)?.images?.at(0) }}">
+            <img class="right-image" src="{{ this.base64 + this.pollsDto?.at(2)?.images?.at(1) }}">
           </div>
 
         </div>
@@ -51,21 +51,21 @@
         <div class="items">
 
           <!--          POLL #4-->
-          <div class="item">
+          <div class="item" (click)="openPoll(this.pollsDto!.at(3)!)">
             <div class="title-bar">
-              <p class="title">qual você prefere?</p>
+              <p class="title"> {{ this.pollsDto?.at(3)?.title }} </p>
             </div>
-            <img class="left-image" src="assets/digital_book.png">
-            <img class="right-image" src="assets/physical_book.png">
+            <img class="left-image" src="{{ this.base64 + this.pollsDto?.at(3)?.images?.at(0) }}">
+            <img class="right-image" src="{{ this.base64 + this.pollsDto?.at(3)?.images?.at(1) }}">
           </div>
 
           <!--          POLL #5-->
-          <div class="item">
+          <div class="item" (click)="openPoll(this.pollsDto!.at(4)!)">
             <div class="title-bar">
-              <p class="title">qual você prefere?</p>
+              <p class="title"> {{ this.pollsDto?.at(4)?.title }} </p>
             </div>
-            <img class="left-image" src="assets/digital_book.png">
-            <img class="right-image" src="assets/physical_book.png">
+            <img class="left-image" src="{{ this.base64 + this.pollsDto?.at(4)?.images?.at(0) }}">
+            <img class="right-image" src="{{ this.base64 + this.pollsDto?.at(4)?.images?.at(1) }}">
           </div>
 
         </div>

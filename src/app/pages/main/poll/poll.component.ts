@@ -72,8 +72,6 @@ export class PollComponent implements OnInit {
     this.pollFullDto!.choices!.at(0)!.votes += 1;
     this.getPercentages(this.pollFullDto!);
 
-    console.log(this.leftPercentage + " " + this.rightPercentage);
-
     this.pollAnimation.hideButtons("desktop-left-poll-button", "desktop-right-poll-button");
     this.pollAnimation.hideElement("desktop-right-choice");
     this.pollAnimation.showActionPanel("flex-end");

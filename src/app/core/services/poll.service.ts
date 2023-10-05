@@ -4,6 +4,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {PollFullDto} from "../models/poll-full-dto.model";
 import {environment} from "../enviroment/enviroment";
+import {PollDto} from "../models/poll-dto.model";
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,8 @@ import {environment} from "../enviroment/enviroment";
 export class PollService extends BaseService{
   apiUrl = `${environment.apiUrl}/poll`;
   latest: string = "/latest";
+  others: string = "/others";
+
 
   constructor(private httpClient: HttpClient) {
     super();
@@ -32,5 +35,7 @@ export class PollService extends BaseService{
     return this.httpClient.get<PollFullDto>(this.apiUrl + "/" + pollId, this.httpOptions);
   }
 
-
+  getOthersPolls(): Observable<PollDto[]> {
+    return this.httpClient.get<PollDto[]>(this.apiUrl + this.others, this.httpOptions);
+  }
 }
