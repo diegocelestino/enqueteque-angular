@@ -3,7 +3,6 @@ import {PollService} from "../../../core/services/poll.service";
 import {Router} from "@angular/router";
 import {first} from "rxjs";
 import {PollDto} from "../../../core/models/poll-dto.model";
-import {Token} from "../../../core/models/token.model";
 
 @Component({
   selector: 'app-others',
@@ -17,10 +16,7 @@ export class OthersComponent implements OnInit{
 
   constructor(
     private pollService: PollService,
-    private router: Router,
-  ) {
-
-  }
+  ) {}
 
   ngOnInit(): void {
     this.loadPolls();
@@ -37,6 +33,10 @@ export class OthersComponent implements OnInit{
   }
 
   openPoll(pollDto: PollDto) {
-    location.replace('pages/' + pollDto.id);
+    location.replace('pages?pollId=' + pollDto.id);
+  }
+
+  seeAll() {
+    location.replace('pages/list');
   }
 }

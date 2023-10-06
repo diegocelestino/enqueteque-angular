@@ -7,4 +7,19 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+
+  openMain(){
+    location.replace("");
+  }
+  openCategories(){
+    location.replace("/pages/categories");
+  }
+
+  seeAll(){
+    location.replace("/pages/list");
+  }
+
+  openSuggestions(){
+    location.replace("/pages/suggestion")
+  }
 }

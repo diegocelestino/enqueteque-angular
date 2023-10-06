@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PollFullDto} from "../../../core/models/poll-full-dto.model";
 import {PollService} from "../../../core/services/poll.service";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute} from "@angular/router";
 import {first} from "rxjs";
 import {PollAnimationService} from "../../../core/services/poll-animation.service";
 import {VoteService} from "../../../core/services/vote.service";
@@ -14,7 +14,7 @@ import {VoteService} from "../../../core/services/vote.service";
 })
 export class PollComponent implements OnInit {
   pollFullDto: PollFullDto | undefined;
-  pollId: string;
+  pollId: string | null;
   leftPercentage: number | undefined;
   rightPercentage: number | undefined;
   leftImage: string | undefined;
@@ -24,11 +24,10 @@ export class PollComponent implements OnInit {
     private pollService: PollService,
     private voteService: VoteService,
     private route: ActivatedRoute,
-    private router: Router,
     private pollAnimation: PollAnimationService,
   ) {
 
-    this.pollId = this.route.snapshot.paramMap.get('pollId')!;
+    this.pollId = this.route.snapshot.queryParamMap.get("pollId");
   }
 
   ngOnInit(): void {
@@ -37,7 +36,7 @@ export class PollComponent implements OnInit {
     this.leftPercentage = 0;
   }
 
-  private loadPoll(pollId: string) {
+  private loadPoll(pollId: string | null) {
     this.pollService.loadPoll(pollId)
       .pipe(first())
       .subscribe({
@@ -49,6 +48,12 @@ export class PollComponent implements OnInit {
       })
   }
 
+  private postVote(choiceId: string) {
+    this.voteService.postVote(choiceId)
+      .pipe(first())
+      .subscribe();
+  }
+
   private getPercentages(pollFullDto: PollFullDto): void{
     let leftVotes = pollFullDto!.choices!.at(0)!.votes;
     let rightVotes = pollFullDto!.choices!.at(1)!.votes;
@@ -56,10 +61,8 @@ export class PollComponent implements OnInit {
     if (leftVotes != 0){
       this.leftPercentage = 100 * leftVotes / totalVotes;
     }
-
     if (rightVotes != 0){
       this.rightPercentage = 100 * rightVotes / totalVotes;
-
     }
   }
 
@@ -71,7 +74,6 @@ export class PollComponent implements OnInit {
   voteOnLeft() {
     this.pollFullDto!.choices!.at(0)!.votes += 1;
     this.getPercentages(this.pollFullDto!);
-
     this.pollAnimation.hideButtons("desktop-left-poll-button", "desktop-right-poll-button");
     this.pollAnimation.hideElement("desktop-right-choice");
     this.pollAnimation.showActionPanel("flex-end");
@@ -85,7 +87,6 @@ export class PollComponent implements OnInit {
   voteOnRight() {
     this.pollFullDto!.choices!.at(1)!.votes += 1;
     this.getPercentages(this.pollFullDto!);
-
     this.pollAnimation.hideButtons("desktop-left-poll-button", "desktop-right-poll-button");
     this.pollAnimation.hideElement("desktop-left-choice");
     this.pollAnimation.showActionPanel("flex-start");
@@ -108,9 +109,5 @@ export class PollComponent implements OnInit {
     this.pollAnimation.enableVoting();
   }
 
-  private postVote(choiceId: string) {
-    this.voteService.postVote(choiceId)
-      .pipe(first())
-      .subscribe();
-  }
+
 }

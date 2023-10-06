@@ -7,4 +7,18 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
 
+  openMain(){
+    location.replace("");
+  }
+  openCategories(){
+    location.replace("/pages/categories");
+  }
+
+  seeAll(){
+    location.replace("/pages/list");
+  }
+
+  openSuggestions(){
+    location.replace("/pages/suggestion")
+  }
 }

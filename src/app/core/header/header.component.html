@@ -1,9 +1,9 @@
 <div class="top-bar">
-  <img class="logo " src="../../../assets/logo.png"/>
+  <img class="logo " src="../../../assets/logo.png" (click)="openMain()">
   <div class="menu-options">
-    <div class="menu-option">categorias</div>
-    <div class="menu-option">ver todas</div>
-    <div class="menu-option">enviar sugestão</div>
+    <div class="menu-option" (click)="openCategories()">categorias</div>
+    <div class="menu-option" (click)="seeAll()">ver todas</div>
+    <div class="menu-option" (click)="openSuggestions()">enviar sugestão</div>
   </div>
   <img class="menu-icon" src="../../../assets/hamburguer.png"/>
 </div>
@@ -16,17 +16,17 @@
       <img class="image" src="../../../assets/right-arrow.png">
     </div>
 
-    <div class="option">
+    <div class="option" (click)="openCategories()">
       <p class="title">categorias</p>
       <img class="image" src="../../../assets/right-arrow.png">
     </div>
 
-    <div class="option">
+    <div class="option" (click)="seeAll()">
       <p class="title">ver todas</p>
       <img class="image" src="../../../assets/right-arrow.png">
 
     </div>
-    <div class="option">
+    <div class="option" (click)="openSuggestions()">
       <p class="title">enviar sugestão</p>
       <img class="image" src="../../../assets/right-arrow.png">
 

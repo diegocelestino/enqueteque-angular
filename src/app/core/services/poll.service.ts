@@ -5,6 +5,7 @@ import {Observable} from "rxjs";
 import {PollFullDto} from "../models/poll-full-dto.model";
 import {environment} from "../enviroment/enviroment";
 import {PollDto} from "../models/poll-dto.model";
+import {PollPageDto} from "../models/poll-page-dto.model";
 
 @Injectable({
   providedIn: 'root'
@@ -13,13 +14,15 @@ export class PollService extends BaseService{
   apiUrl = `${environment.apiUrl}/poll`;
   latest: string = "/latest";
   others: string = "/others";
+  byCategory: string = "/category/";
+  allCategories: string = "/category/all";
 
 
   constructor(private httpClient: HttpClient) {
     super();
   }
 
-  loadPoll(pollId: string): Observable<PollFullDto>{
+  loadPoll(pollId: string | null): Observable<PollFullDto>{
     if (pollId == null){
       return this.getLatestPoll();
     } else {
@@ -37,5 +40,17 @@ export class PollService extends BaseService{
 
   getOthersPolls(): Observable<PollDto[]> {
     return this.httpClient.get<PollDto[]>(this.apiUrl + this.others, this.httpOptions);
+  }
+
+  getAllPolls(page: number): Observable<PollPageDto> {
+    return this.httpClient.get<PollPageDto>(this.apiUrl  + "?page=" + page, this.httpOptions);
+  }
+
+  loadCategories(): Observable<string[]> {
+    return this.httpClient.get<string[]>(this.apiUrl + this.allCategories, this.httpOptions);
+  }
+
+  getAllPollsByCategory(category: string, page: number): Observable<PollPageDto> {
+    return this.httpClient.get<PollPageDto>(this.apiUrl + this.byCategory + category + "?page=" + page, this.httpOptions);
   }
 }

@@ -1,0 +1,168 @@
+<div class="content">
+
+  <!--  TITLE OF THE COMPONENT-->
+  <div class="component-title">
+    <p class="title">todas as enquetes</p>
+  </div>
+
+  <div class="polls-list">
+
+
+    <!--      ROW #1-->
+    <div class="polls-row">
+
+      <div class="half-row">
+        <div class="item" (click)="openPoll(this.pollsDto!.at(0)!)">
+          <div class="title-bar">
+            <p class="title"> {{ this.pollsDto?.at(0)?.title }} </p>
+          </div>
+          <img class="left-image" src="{{ this.base64 + this.pollsDto?.at(0)?.images?.at(0) }}">
+          <img class="right-image" src="{{ this.base64 + this.pollsDto?.at(0)?.images?.at(1) }}">
+        </div>
+
+        <div class="item" (click)="openPoll(this.pollsDto!.at(1)!)">
+          <div class="title-bar">
+            <p class="title"> {{ this.pollsDto?.at(1)?.title }} </p>
+          </div>
+          <img class="left-image" src="{{ this.base64 + this.pollsDto?.at(1)?.images?.at(0) }}">
+          <img class="right-image" src="{{ this.base64 + this.pollsDto?.at(1)?.images?.at(1) }}">
+        </div>
+      </div>
+
+      <div class="half-row">
+        <div class="item" (click)="openPoll(this.pollsDto!.at(2)!)">
+          <div class="title-bar">
+            <p class="title"> {{ this.pollsDto?.at(2)?.title }} </p>
+          </div>
+          <img class="left-image" src="{{ this.base64 + this.pollsDto?.at(2)?.images?.at(0) }}">
+          <img class="right-image" src="{{ this.base64 + this.pollsDto?.at(2)?.images?.at(1) }}">
+        </div>
+        <div class="item" (click)="openPoll(this.pollsDto!.at(3)!)">
+          <div class="title-bar">
+            <p class="title"> {{ this.pollsDto?.at(3)?.title }} </p>
+          </div>
+          <img class="left-image" src="{{ this.base64 + this.pollsDto?.at(3)?.images?.at(0) }}">
+          <img class="right-image" src="{{ this.base64 + this.pollsDto?.at(3)?.images?.at(1) }}">
+        </div>
+      </div>
+    </div>
+    <!--      ROW #2-->
+    <div class="polls-row">
+
+      <div class="half-row">
+        <div class="item" (click)="openPoll(this.pollsDto!.at(4)!)">
+          <div class="title-bar">
+            <p class="title"> {{ this.pollsDto?.at(4)?.title }} </p>
+          </div>
+          <img class="left-image" src="{{ this.base64 + this.pollsDto?.at(4)?.images?.at(0) }}">
+          <img class="right-image" src="{{ this.base64 + this.pollsDto?.at(4)?.images?.at(1) }}">
+        </div>
+
+        <div class="item" (click)="openPoll(this.pollsDto!.at(5)!)">
+          <div class="title-bar">
+            <p class="title"> {{ this.pollsDto?.at(5)?.title }} </p>
+          </div>
+          <img class="left-image" src="{{ this.base64 + this.pollsDto?.at(5)?.images?.at(0) }}">
+          <img class="right-image" src="{{ this.base64 + this.pollsDto?.at(5)?.images?.at(1) }}">
+        </div>
+      </div>
+
+      <div class="half-row">
+        <div class="item" (click)="openPoll(this.pollsDto!.at(6)!)">
+          <div class="title-bar">
+            <p class="title"> {{ this.pollsDto?.at(6)?.title }} </p>
+          </div>
+          <img class="left-image" src="{{ this.base64 + this.pollsDto?.at(6)?.images?.at(0) }}">
+          <img class="right-image" src="{{ this.base64 + this.pollsDto?.at(6)?.images?.at(1) }}">
+        </div>
+        <div class="item" (click)="openPoll(this.pollsDto!.at(7)!)">
+          <div class="title-bar">
+            <p class="title"> {{ this.pollsDto?.at(7)?.title }} </p>
+          </div>
+          <img class="left-image" src="{{ this.base64 + this.pollsDto?.at(7)?.images?.at(0) }}">
+          <img class="right-image" src="{{ this.base64 + this.pollsDto?.at(7)?.images?.at(1) }}">
+        </div>
+      </div>
+    </div>
+
+    <!--    ROW #3-->
+    <div class="polls-row">
+
+      <div class="half-row">
+        <div class="item" (click)="openPoll(this.pollsDto!.at(8)!)">
+          <div class="title-bar">
+            <p class="title"> {{ this.pollsDto?.at(8)?.title }} </p>
+          </div>
+          <img class="left-image" src="{{ this.base64 + this.pollsDto?.at(8)?.images?.at(0) }}">
+          <img class="right-image" src="{{ this.base64 + this.pollsDto?.at(8)?.images?.at(1) }}">
+        </div>
+
+        <div class="item" (click)="openPoll(this.pollsDto!.at(9)!)">
+          <div class="title-bar">
+            <p class="title"> {{ this.pollsDto?.at(9)?.title }} </p>
+          </div>
+          <img class="left-image" src="{{ this.base64 + this.pollsDto?.at(9)?.images?.at(0) }}">
+          <img class="right-image" src="{{ this.base64 + this.pollsDto?.at(9)?.images?.at(1) }}">
+        </div>
+      </div>
+
+      <div class="half-row">
+        <div class="item" (click)="openPoll(this.pollsDto!.at(10)!)">
+          <div class="title-bar">
+            <p class="title"> {{ this.pollsDto?.at(10)?.title }} </p>
+          </div>
+          <img class="left-image" src="{{ this.base64 + this.pollsDto?.at(10)?.images?.at(0) }}">
+          <img class="right-image" src="{{ this.base64 + this.pollsDto?.at(10)?.images?.at(1) }}">
+        </div>
+        <div class="item" (click)="openPoll(this.pollsDto!.at(11)!)">
+          <div class="title-bar">
+            <p class="title"> {{ this.pollsDto?.at(11)?.title }} </p>
+          </div>
+          <img class="left-image" src="{{ this.base64 + this.pollsDto?.at(11)?.images?.at(0) }}">
+          <img class="right-image" src="{{ this.base64 + this.pollsDto?.at(11)?.images?.at(1) }}">
+        </div>
+      </div>
+    </div>
+    <!--      ROW #4-->
+    <div class="polls-row">
+
+      <div class="half-row">
+        <div class="item" (click)="openPoll(this.pollsDto!.at(12)!)">
+          <div class="title-bar">
+            <p class="title"> {{ this.pollsDto?.at(12)?.title }} </p>
+          </div>
+          <img class="left-image" src="{{ this.base64 + this.pollsDto?.at(12)?.images?.at(0) }}">
+          <img class="right-image" src="{{ this.base64 + this.pollsDto?.at(12)?.images?.at(1) }}">
+        </div>
+
+        <div class="item" (click)="openPoll(this.pollsDto!.at(13)!)">
+          <div class="title-bar">
+            <p class="title"> {{ this.pollsDto?.at(13)?.title }} </p>
+          </div>
+          <img class="left-image" src="{{ this.base64 + this.pollsDto?.at(13)?.images?.at(0) }}">
+          <img class="right-image" src="{{ this.base64 + this.pollsDto?.at(13)?.images?.at(1) }}">
+        </div>
+      </div>
+
+      <div class="half-row">
+        <div class="item" (click)="openPoll(this.pollsDto!.at(14)!)">
+          <div class="title-bar">
+            <p class="title"> {{ this.pollsDto?.at(14)?.title }} </p>
+          </div>
+          <img class="left-image" src="{{ this.base64 + this.pollsDto?.at(14)?.images?.at(0) }}">
+          <img class="right-image" src="{{ this.base64 + this.pollsDto?.at(14)?.images?.at(1) }}">
+        </div>
+        <div class="item" (click)="openPoll(this.pollsDto!.at(15)!)">
+          <div class="title-bar">
+            <p class="title"> {{ this.pollsDto?.at(15)?.title }} </p>
+          </div>
+          <img class="left-image" src="{{ this.base64 + this.pollsDto?.at(15)?.images?.at(0) }}">
+          <img class="right-image" src="{{ this.base64 + this.pollsDto?.at(15)?.images?.at(1) }}">
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>

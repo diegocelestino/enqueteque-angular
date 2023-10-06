@@ -8,33 +8,10 @@
   <div class="categories">
     <div class="categories-list">
 
-      <div class="category">
-        <p class="title">comidas</p>
+      <div class="category" *ngFor="let category of this.categories" (click)="openCategories(category)">
+        <p class="title"> {{category}} </p>
       </div>
 
-      <div class="category">
-        <p class="title">famosos</p>
-      </div>
-
-      <div class="category">
-        <p class="title">animais</p>
-      </div>
-
-      <div class="category">
-        <p class="title">objetos</p>
-      </div>
-
-      <div class="category">
-        <p class="title">filmes</p>
-      </div>
-
-      <div class="category">
-        <p class="title">musica</p>
-      </div>
-
-      <div class="category">
-        <p class="title">costumes</p>
-      </div>
 
     </div>
   </div>

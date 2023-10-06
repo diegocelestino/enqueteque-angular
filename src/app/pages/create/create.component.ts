@@ -39,6 +39,7 @@ export class CreateComponent implements OnInit {
           this.pollFullDto = pollFullDto;
         }
       })
+    this.dismountPoll();
   }
 
   mountPoll(){
@@ -56,6 +57,15 @@ export class CreateComponent implements OnInit {
       <string>this.rightImage);
 
     return new PollFullCreateDto(pollCreateDto, [leftChoice,rightChoice]);
+  }
+
+  dismountPoll(){
+      (<HTMLInputElement>document.getElementById("poll-title")).value = '';
+      (<HTMLInputElement>document.getElementById("poll-category")).value = '';
+      (<HTMLInputElement>document.getElementById("left-option-title")).value = '';
+      (<HTMLInputElement>document.getElementById("right-option-title")).value = '';
+      (<HTMLInputElement>document.getElementById("left-option-image")).value = '';
+      (<HTMLInputElement>document.getElementById("right-option-image")).value = '';
   }
 
   convertImageToBase64(image: File, orientation: string) {
