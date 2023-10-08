@@ -6,10 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  menuState: boolean = false;
 
 
   openMain(){
-    location.replace("");
+    location.replace("/pages");
   }
   openCategories(){
     location.replace("/pages/categories");
@@ -21,5 +22,16 @@ export class HeaderComponent {
 
   openSuggestions(){
     location.replace("/pages/suggestion")
+  }
+
+  toggleMenu() {
+    let mobileMenu = document.getElementById("mobile-menu");
+    if(this.menuState){
+      mobileMenu!.style.display = "none";
+      this.menuState = false;
+    } else {
+      mobileMenu!.style.display = "flex";
+      this.menuState = true;
+    }
   }
 }

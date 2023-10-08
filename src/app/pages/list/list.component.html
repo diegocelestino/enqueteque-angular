@@ -5,17 +5,30 @@
   </div>
 
   <div class="poll-container">
-  <div class="polls-row">
+    <div class="polls-row">
 
-    <div class="item" (click)="openPoll(poll)" *ngFor="let poll of this.pollPageDto?.pollDtoList">
-      <div class="title-bar">
-        <p class="title"> {{ poll.title }} </p>
+      <div class="item" (click)="openPoll(poll)" *ngFor="let poll of this.pollPageDto?.pollDtoList">
+        <div class="title-bar">
+          <p class="title"> {{ poll.title }} </p>
+        </div>
+        <img class="left-image" src="{{ this.base64 + poll.images.at(0) }}">
+        <img class="right-image" src="{{ this.base64 + poll.images.at(1) }}">
       </div>
-      <img class="left-image" src="{{ this.base64 + poll.images.at(0) }}">
-      <img class="right-image" src="{{ this.base64 + poll.images.at(1) }}">
-    </div>
 
+    </div>
   </div>
+
+  <div class="pagination">
+    <div class="row">
+      <button *ngIf="this.pollPageDto?.actualPage != 0" class="button" id="previous" (click)="previous()">
+        Anterior
+      </button>
+      <p> {{ this.pollPageDto?.actualPage! + 1 }} de {{ this.pollPageDto?.totalPages! }} </p>
+      <button *ngIf="(this.pollPageDto?.actualPage! + 1) != this.pollPageDto?.totalPages"
+              class="button" id="next" (click)="next()">
+        Seguinte
+      </button>
+    </div>
 
   </div>
 

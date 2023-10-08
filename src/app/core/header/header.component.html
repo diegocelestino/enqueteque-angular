@@ -5,13 +5,13 @@
     <div class="menu-option" (click)="seeAll()">ver todas</div>
     <div class="menu-option" (click)="openSuggestions()">enviar sugestão</div>
   </div>
-  <img class="menu-icon" src="../../../assets/hamburguer.png"/>
+  <img class="menu-icon" src="../../../assets/hamburguer.png" (click)="toggleMenu()"/>
 </div>
 
-<div class="mobile-menu">
+<div class="mobile-menu" id="mobile-menu">
   <div class="rectangle"></div>
   <div class="holder">
-    <div class="option">
+    <div class="option" (click)="openMain()">
       <p class="title">inicio</p>
       <img class="image" src="../../../assets/right-arrow.png">
     </div>

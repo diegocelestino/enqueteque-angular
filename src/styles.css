@@ -1,7 +1,12 @@
-/*@import url('https://fonts.googleapis.com/css?family=Nunito');*/
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 
 body {
-  /*font-family: 'Nunito', sans-serif ;*/
+  font-family: 'Nunito', sans-serif ;
   width: 100%;
   margin: 0;
+}
+
+.content {
+  background: #EBE7B7;
+  padding: 40px 0px 80px 0px;
 }

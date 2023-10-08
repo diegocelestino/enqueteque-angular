@@ -48,6 +48,8 @@ export class ListComponent implements OnInit {
       .subscribe({
         next: pollPageDto => {
           this.pollPageDto = pollPageDto;
+          console.log(this.pollPageDto);
+
         }
       })
   }
@@ -85,5 +87,13 @@ export class ListComponent implements OnInit {
     } else {
       this.loadPollByCategory(category, page);
     }
+  }
+
+  previous() {
+    location.replace('pages/list?page=' + (parseInt(String(this.page!)) - 1));
+  }
+
+  next() {
+    location.replace('pages/list?page=' + (parseInt(String(this.page!)) + 1));
   }
 }
