@@ -3,9 +3,9 @@ import {BaseService} from "./base.service";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {PollFullDto} from "../models/poll-full-dto.model";
-import {environment} from "../enviroment/enviroment";
 import {PollDto} from "../models/poll-dto.model";
 import {PollPageDto} from "../models/poll-page-dto.model";
+import {environment} from "../enviroment/enviroment";
 
 @Injectable({
   providedIn: 'root'

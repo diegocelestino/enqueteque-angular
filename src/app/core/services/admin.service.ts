@@ -5,11 +5,12 @@ import {BaseService} from "./base.service";
 import {PollFullDto} from "../models/poll-full-dto.model";
 import {PollFullCreateDto} from "../models/poll-full-create-dto.model";
 import {Observable} from "rxjs";
+import {PollDto} from "../models/poll-dto.model";
 
 @Injectable({
   providedIn: 'root'
 })
-export class CreateService extends BaseService {
+export class AdminService extends BaseService {
   apiUrl = `${environment.apiUrl}/poll`;
 
   constructor(private httpClient: HttpClient) {
@@ -18,10 +19,19 @@ export class CreateService extends BaseService {
 
   postPoll(pollFullCreateDto: PollFullCreateDto, token: string): Observable<PollFullDto> {
     return this.httpClient.post<PollFullDto>(this.apiUrl, pollFullCreateDto,
-      {headers: new HttpHeaders({
+        {headers: new HttpHeaders({
           'Content-Type': 'application/json',
           'Accept-Language': 'pt-BR',
           'Authorization' : 'Bearer ' + token,
         })});
   }
+
+    getAllPolls(token: string) : Observable<PollDto[]> {
+            return this.httpClient.get<PollDto[]>(this.apiUrl + "/admin",
+                {headers: new HttpHeaders({
+                        'Content-Type': 'application/json',
+                        'Accept-Language': 'pt-BR',
+                        'Authorization' : 'Bearer ' + token,
+                    })});
+    }
 }

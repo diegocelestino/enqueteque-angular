@@ -29,12 +29,13 @@ export class LoginComponent {
       .pipe(first())
       .subscribe({
         next: token => {
-          this.openCreateForm(token);
+          localStorage.setItem("token", token.token);
+          this.openCreateForm();
         }
       })
   }
 
-  openCreateForm(token: Token) {
-    this.router.navigate(['pages','create', token.token]);
+  openCreateForm() {
+    this.router.navigate(['pages','admin','polls']);
   }
 }

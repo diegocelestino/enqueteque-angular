@@ -10,6 +10,7 @@ import {ListComponent} from "./list/list.component";
 import {CreateComponent} from "./create/create.component";
 import {SuggestionComponent} from "./suggestion/suggestion.component";
 import { LoginComponent } from './login/login.component';
+import { AdminListComponent } from './admin-list/admin-list.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { LoginComponent } from './login/login.component';
     CreateComponent,
     SuggestionComponent,
     LoginComponent,
+    AdminListComponent,
   ],
     imports: [
         CommonModule,

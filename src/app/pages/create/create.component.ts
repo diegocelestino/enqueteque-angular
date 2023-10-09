@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {VoteService} from "../../core/services/vote.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {CreateService} from "../../core/services/create.service";
+import {AdminService} from "../../core/services/admin.service";
 import {PollCreateDto} from "../../core/models/poll-create-dto.model";
 import {ChoiceCreateDto} from "../../core/models/choice-create-dto.model";
 import {PollFullCreateDto} from "../../core/models/poll-full-create-dto.model";
@@ -14,25 +14,23 @@ import {PollFullDto} from "../../core/models/poll-full-dto.model";
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent implements OnInit {
-  private token: string | undefined;
+  private token: string | undefined | null;
   private leftImage: unknown;
   private rightImage: unknown;
   private pollFullDto: PollFullDto | undefined;
 
   constructor(
-    private createService: CreateService,
-    private voteService: VoteService,
-    private route: ActivatedRoute,
+    private adminService: AdminService,
     private router: Router,
   ) {
   }
 
   ngOnInit(): void {
-    this.token = this.route.snapshot.paramMap.get('token')!;
+    this.token = localStorage.getItem("token");
   }
 
   postPoll() {
-    this.createService.postPoll(this.mountPoll(), this.token!)
+    this.adminService.postPoll(this.mountPoll(), this.token!)
       .pipe(first())
       .subscribe({
         next: pollFullDto => {
