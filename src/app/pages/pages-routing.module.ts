@@ -7,6 +7,7 @@ import {CreateComponent} from "./create/create.component";
 import {SuggestionComponent} from "./suggestion/suggestion.component";
 import {LoginComponent} from "./login/login.component";
 import {AdminListComponent} from "./admin-list/admin-list.component";
+import {AdminEditComponent} from "./admin-edit/admin-edit.component";
 
 const routes: Routes = [
   { path: '', component: MainComponent },
@@ -15,8 +16,8 @@ const routes: Routes = [
   { path: 'login', component:LoginComponent},
   { path: 'suggestion', component: SuggestionComponent},
   { path: 'admin/create', component: CreateComponent},
-  { path: 'admin/polls', component: AdminListComponent}
-
+  { path: 'admin/polls', component: AdminListComponent},
+  { path: 'admin/edit/:pollId', component: AdminEditComponent}
 ];
 
 @NgModule({

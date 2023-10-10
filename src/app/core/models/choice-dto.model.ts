@@ -2,7 +2,7 @@ export class ChoiceDto {
   id: string;
   title: string;
   image: string;
-  pollId: string;
+  pollId: unknown;
   votes: number;
 
   constructor(

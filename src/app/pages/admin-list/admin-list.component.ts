@@ -33,4 +33,11 @@ export class AdminListComponent implements OnInit{
         })
   }
 
+  openCreateForm(){
+    location.replace("/pages/admin/create");
+  }
+
+  editPoll(id: string) {
+    location.replace("/pages/admin/edit/" + id);
+  }
 }

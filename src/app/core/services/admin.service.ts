@@ -11,7 +11,7 @@ import {PollDto} from "../models/poll-dto.model";
   providedIn: 'root'
 })
 export class AdminService extends BaseService {
-  apiUrl = `${environment.apiUrl}/poll`;
+  apiUrl = `${environment.apiUrl}/admin`;
 
   constructor(private httpClient: HttpClient) {
     super();
@@ -27,11 +27,24 @@ export class AdminService extends BaseService {
   }
 
     getAllPolls(token: string) : Observable<PollDto[]> {
-            return this.httpClient.get<PollDto[]>(this.apiUrl + "/admin",
+            return this.httpClient.get<PollDto[]>(this.apiUrl,
                 {headers: new HttpHeaders({
                         'Content-Type': 'application/json',
                         'Accept-Language': 'pt-BR',
                         'Authorization' : 'Bearer ' + token,
                     })});
     }
+
+  getPollById(pollId: string | null): Observable<PollFullDto> {
+    return this.httpClient.get<PollFullDto>(this.apiUrl + "/" + pollId, this.httpOptions);
+  }
+
+  putPoll(pollFullDto: PollFullDto | undefined, token: string): Observable<PollFullDto> {
+    return this.httpClient.put<PollFullDto>(this.apiUrl, pollFullDto,
+      {headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          'Accept-Language': 'pt-BR',
+          'Authorization' : 'Bearer ' + token,
+        })});
+  }
 }

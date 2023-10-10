@@ -1,0 +1,68 @@
+<div class="content">
+
+  <div class="component-title">
+    <p class="title"> editar </p>
+  </div>
+  <div class="component-subtitle">
+    <p class="subtitle"> id: {{this.pollFullDto?.pollDto?.id}} </p>
+  </div>
+  <div class="component-subtitle">
+    <p class="subtitle"> createDate: {{this.pollFullDto?.pollDto?.createDate}}</p>
+  </div>
+
+
+  <div class="form-container">
+    <form>
+      <label class="label">titulo</label>
+      <input id="poll-title" type="text" class="input" value="{{this.pollFullDto?.pollDto?.title}}">
+      <label class="label">categoria:</label>
+      <input id="poll-category" type="text" class="input" value="{{this.pollFullDto?.pollDto?.category}}">
+
+      <div class="choices-container">
+
+        <div class="choice">
+          <div class="item-container">
+            <img src="data:image/png;base64,{{this.leftImage}}">
+          </div>
+          <div class="item-container">
+            <input class="image-input" id="left-option-image"
+                   type="file" (change)="onFileSelected($event, 'left')">
+          </div>
+          <div class="component-subtitle">
+            <p class="subtitle"> id: {{this.pollFullDto?.choices?.at(0)?.id}} </p>
+          </div>
+
+          <label class="label">titulo:</label>
+          <input id="left-choice-title" type="text" class="input" value="{{this.pollFullDto?.choices?.at(0)?.title}}">
+        </div>
+
+
+        <div class="choice">
+          <div class="item-container">
+            <img src="data:image/png;base64,{{this.rightImage}}">
+          </div>
+          <div class="item-container">
+            <input class="image-input" id="right-option-image"
+                   type="file" (change)="onFileSelected($event, 'right')">
+          </div>
+          <div class="component-subtitle">
+            <p class="subtitle"> id: {{this.pollFullDto?.choices?.at(1)?.id}} </p>
+          </div>
+
+          <label class="label">titulo:</label>
+          <input id="right-choice-title" type="text" class="input" value="{{this.pollFullDto?.choices?.at(1)?.title}}">
+        </div>
+
+      </div>
+
+      <div class="action-buttons">
+        <button class="button" formaction="/pages/admin/polls">cancelar</button>
+        <button class="button" (click)="putPoll()">enviar</button>
+      </div>
+
+
+    </form>
+  </div>
+
+
+</div>

@@ -9,14 +9,14 @@
             <tr>
                 <th>enquete</th>
                 <th></th>
-                <th>
+                <th (click)="openCreateForm()">
                     <img src="assets/add.png">
                 </th>
             </tr>
 
             <tr *ngFor="let poll of this.pollsDto">
                 <td> {{poll.title}} </td>
-                <td> editar </td>
+                <td (click)="editPoll(poll.id)"> editar </td>
                 <td> deletar </td>
             </tr>
         </table>

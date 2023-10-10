@@ -1,31 +1,32 @@
 <div class="content">
-  <div class="component-title">
-    <p class="title">criar enquete</p>
-  </div>
-
-  <div class="suggestion-form">
-
-    <div class="items">
-
-      <p class="label">titulo</p>
-      <input class="input" id="poll-title" type="text">
-
-      <p class="label">categoria</p>
-      <input class="input" id="poll-category" type="text">
-
-      <p class="label">opção 1</p>
-      <input class="input" id="left-option-title" type="text">
-      <input class="image-input" id="left-option-image" type="file" (change)="onFileSelected($event, 'left')">
-
-
-      <p class="label">opção 2</p>
-      <input class="input" id="right-option-title" type="text">
-      <input class="image-input" id="right-option-image" type="file" (change)="onFileSelected($event, 'right')">
-
-      <div class="action-button">
-        <button class="button" (click)="postPoll()" >enviar</button>
-      </div>
+    <div class="component-title">
+        <p class="title">criar enquete</p>
     </div>
-  </div>
+
+    <div class="suggestion-form">
+
+        <div class="items">
+
+            <p class="label">titulo</p>
+            <input class="input" id="poll-title" type="text">
+
+            <p class="label">categoria</p>
+            <input class="input" id="poll-category" type="text">
+
+            <p class="label">opção 1</p>
+            <input class="input" id="left-option-title" type="text">
+            <input class="image-input" id="left-option-image" type="file" (change)="onFileSelected($event, 'left')">
+
+
+            <p class="label">opção 2</p>
+            <input class="input" id="right-option-title" type="text">
+            <input class="image-input" id="right-option-image" type="file" (change)="onFileSelected($event, 'right')">
+
+                <div class="action-buttons">
+                    <button class="button" (click)="back()">voltar</button>
+                    <button class="button" (click)="postPoll()">enviar</button>
+                </div>
+        </div>
+    </div>
 
 </div>

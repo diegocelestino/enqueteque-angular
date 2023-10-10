@@ -90,4 +90,7 @@ export class CreateComponent implements OnInit {
     this.convertImageToBase64(event.target.files[0], orientation);
   }
 
+  back() {
+    location.replace("/pages/admin/polls");
+  }
 }

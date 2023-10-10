@@ -11,6 +11,7 @@ import {CreateComponent} from "./create/create.component";
 import {SuggestionComponent} from "./suggestion/suggestion.component";
 import { LoginComponent } from './login/login.component';
 import { AdminListComponent } from './admin-list/admin-list.component';
+import { AdminEditComponent } from './admin-edit/admin-edit.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { AdminListComponent } from './admin-list/admin-list.component';
     SuggestionComponent,
     LoginComponent,
     AdminListComponent,
+    AdminEditComponent,
   ],
     imports: [
         CommonModule,
