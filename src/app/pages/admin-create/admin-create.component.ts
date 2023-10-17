@@ -9,11 +9,11 @@ import {first} from "rxjs";
 import {PollFullDto} from "../../core/models/poll-full-dto.model";
 
 @Component({
-  selector: 'app-create',
-  templateUrl: './create.component.html',
-  styleUrls: ['./create.component.css']
+  selector: 'app-admin-create',
+  templateUrl: './admin-create.component.html',
+  styleUrls: ['./admin-create.component.css']
 })
-export class CreateComponent implements OnInit {
+export class AdminCreateComponent implements OnInit {
   private token: string | undefined | null;
   private leftImage: unknown;
   private rightImage: unknown;

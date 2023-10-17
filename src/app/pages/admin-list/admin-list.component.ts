@@ -10,6 +10,7 @@ import {AdminService} from "../../core/services/admin.service";
   styleUrls: ['./admin-list.component.css']
 })
 export class AdminListComponent implements OnInit{
+  evidencePoll: PollDto | undefined;
   pollsDto: PollDto[] | undefined;
   token: string | undefined | null;
 
@@ -28,7 +29,18 @@ export class AdminListComponent implements OnInit{
         .subscribe({
           next: pollPageDto => {
             this.pollsDto = pollPageDto;
-            console.log(this.pollsDto);
+          }
+        })
+  }
+
+  deletePoll(evidencePoll: PollDto | undefined) {
+    console.log(evidencePoll)
+    this.adminService.deletePoll(this.token!, evidencePoll!.id!)
+        .pipe(first())
+        .subscribe({
+          next: () => {
+            this.cancelDeletePoll();
+            location.reload();
           }
         })
   }
@@ -40,4 +52,16 @@ export class AdminListComponent implements OnInit{
   editPoll(id: string) {
     location.replace("/pages/admin/edit/" + id);
   }
+
+  confirmDeletePoll(poll: PollDto) {
+    let modal = document.getElementById("modal-container");
+    this.evidencePoll = poll;
+    modal!.style.display = "flex";
+  }
+
+  cancelDeletePoll() {
+    let modal = document.getElementById("modal-container");
+    modal!.style.display = "none";
+  }
+
 }

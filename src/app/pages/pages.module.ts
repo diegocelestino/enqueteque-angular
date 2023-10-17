@@ -7,7 +7,7 @@ import { MainComponent } from './main/main.component';
 import { PollComponent } from './main/poll/poll.component';
 import { OthersComponent } from './main/others/others.component';
 import {ListComponent} from "./list/list.component";
-import {CreateComponent} from "./create/create.component";
+import {AdminCreateComponent} from "./admin-create/admin-create.component";
 import {SuggestionComponent} from "./suggestion/suggestion.component";
 import { LoginComponent } from './login/login.component';
 import { AdminListComponent } from './admin-list/admin-list.component';
@@ -21,7 +21,7 @@ import { AdminEditComponent } from './admin-edit/admin-edit.component';
     PollComponent,
     OthersComponent,
     ListComponent,
-    CreateComponent,
+    AdminCreateComponent,
     SuggestionComponent,
     LoginComponent,
     AdminListComponent,

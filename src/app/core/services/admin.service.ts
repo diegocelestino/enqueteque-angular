@@ -47,4 +47,9 @@ export class AdminService extends BaseService {
           'Authorization' : 'Bearer ' + token,
         })});
   }
+
+    deletePoll(token: string, pollId: string) {
+      console.log(this.apiUrl + "/" + pollId)
+        return this.httpClient.delete<void>(this.apiUrl + "/" + pollId, this.httpOptions);
+    }
 }

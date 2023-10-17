@@ -1,4 +1,19 @@
+<div class="modal-container" id="modal-container">
+    <div class="modal">
+        <p class="title"> atenção!!!! </p>
+        <p class="subtitle"> deseja realmente apagar a enquete “{{this.evidencePoll?.title}}”
+            <br><br> depois não vai chorar </p>
+
+        <div class="action-buttons">
+            <button class="button" (click)="cancelDeletePoll()">cancelar</button>
+            <button class="delete-button" (click)="deletePoll(this.evidencePoll)">deletar</button>
+        </div>
+    </div>
+</div>
+
 <div class="content">
+
+
     <div class="component-title">
         <p class="title"> enquetes </p>
     </div>
@@ -17,10 +32,14 @@
             <tr *ngFor="let poll of this.pollsDto">
                 <td> {{poll.title}} </td>
                 <td (click)="editPoll(poll.id)"> editar </td>
-                <td> deletar </td>
+                <td (click)="confirmDeletePoll(poll)"> deletar </td>
             </tr>
         </table>
+
     </div>
+
+
+
 
 
 

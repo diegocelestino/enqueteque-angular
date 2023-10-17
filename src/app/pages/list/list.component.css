@@ -33,6 +33,7 @@
   width: 240px;
   border-radius: 16px;
   box-shadow: 0px 4px 4px -2px #001F21;
+  cursor: pointer;
 }
 
 .item .left-image {

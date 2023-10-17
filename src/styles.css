@@ -10,3 +10,7 @@ body {
   background: #EBE7B7;
   padding: 40px 0px 80px 0px;
 }
+
+button {
+  cursor: pointer;
+}
